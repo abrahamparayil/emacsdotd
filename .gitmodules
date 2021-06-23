@@ -1,0 +1,3 @@
+[submodule "doom-snippets"]
+	path = doom-snippets
+	url = https://github.com/hlissner/doom-snippets
