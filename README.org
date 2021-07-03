@@ -1,0 +1,36 @@
+#+TITLE:  Emacs Configuration
+#+AUTHOR: Abraham Raji <avronr@tuta.io>
+#+DATE: Sat 03 Jul 2021 07:06:33 AM IST
+
+* A Minimalist's Emacs Configuration
+  #+begin_quote
+  “Less is more.” -Mies Van Der Rohe, 1886.
+  #+end_quote
+The whole point of this configuration is to have an Emacs configuration that
+let's me work with text (whether it's for writing programs or blogs or essays)
+in peace, without many distractions. This config 
+
+A few goals I set out to achieve with this config are:
+- Fast initial load time.
+   - The output of =time emacs=
+      #+begin_src sh
+      ❯ time emacs
+      emacs  4.02s user 0.30s system 72% cpu 5.980 total
+      #+end_src
+   - The output of =time emacs --daemon=
+      #+begin_src sh
+      ❯ time emacs --daemon
+      #startup messages
+      emacs --daemon  0.02s user 0.02s system 1% cpu 2.533 total
+      #+end_src
+  Overall I am satisfied with these load times for now, that being said I will
+  be tinkering around to optimize for better startup times.
+- All the basic essentials you'd expect from a modern text editor.
+   This invloves basic things like completion, syntax checking, spell checking,
+   snippets etc. This is in addition to what Emacs in itself brings to the table
+   with packages such as =org-mode= and =magit=.
+- Clean and aesthetically pleasing UI.
+   I've replaced the standard =modeline= with the =powerline= package which in  my
+   opinion looks great and is very functional. I'm using the
+   =doom-tomorrow-night= theme from the =doom-themes= package which is a very
+   pleasing theme that is easy on the eyes.
