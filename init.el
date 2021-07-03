@@ -91,4 +91,11 @@
 
 (setq-default indent-tabs-mode t)
 
+;; insert date and time
+(defun insert-current-date ()
+  "Insert current date and time."
+  (interactive)
+  (insert (shell-command-to-string "echo -n $(date)")))
+
+(global-set-key (kbd "C-c C-d") 'insert-current-date)
 ;;; init.el ends here
