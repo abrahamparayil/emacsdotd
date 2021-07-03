@@ -148,6 +148,28 @@
 	  (bind-key "C-x g" 'magit-status)))
 (use-package with-editor)
 
+(use-package flyspell
+  :ensure t
+  :diminish flyspell-mode
+  :init
+  (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+  (dolist (hook '(text-mode-hook org-mode-hook))
+    (add-hook hook (lambda () (flyspell-mode 1))))
+
+  (dolist (hook '(change-log-mode-hook log-edit-mode-hook org-agenda-mode-hook))
+    (add-hook hook (lambda () (flyspell-mode -1))))
+
+  :config
+  (setq ispell-program-name "/usr/bin/aspell"
+        ispell-local-dictionary "en_US"
+        ispell-dictionary "american" ; better for aspell
+        ispell-extra-args '("--sug-mode=ultra" "--lang=en_US")
+        ispell-list-command "--list"
+        ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "['‘’]"
+                                      t ; Many other characters
+                                      ("-d" "en_US") nil utf-8))))
+
 ;; Company mode
 (use-package company :ensure t
   :bind (:map company-active-map ("<tab>" . company-complete-selection)))
