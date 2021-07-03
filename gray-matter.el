@@ -327,9 +327,15 @@ Taken from https://github.com/syl20bnr/spacemacs/pull/179."
 (defun gray-matter/visit-emacs-config ()
   "Quickly visit Emacs configuration."
   (interactive)
+  (find-file "~/.emacs.d/init.el"))
+
+(defun gray-matter/visit-gray-matter ()
+  "Quickly visit Emacs configuration."
+  (interactive)
   (find-file "~/.emacs.d/gray-matter.el"))
 
 (global-set-key (kbd "C-c e") 'gray-matter/visit-emacs-config)
+(global-set-key (kbd "C-c m") 'gray-matter/visit-gray-matter)
 
 ;; Projectile
 (use-package projectile :ensure t
