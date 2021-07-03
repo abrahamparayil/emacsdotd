@@ -61,7 +61,7 @@
 
 ;; Set font size
 (set-face-attribute 'default nil :family "Inconsolata" :height 180)
-(set-face-attribute 'variable-pitch nil :family "Libre Baskerville" :height 140)
+(set-face-attribute 'variable-pitch nil :family "Quicksand" :height 140)
 
 ;; Column Break
 (add-hook 'text-mode-hook #'auto-fill-mode)
