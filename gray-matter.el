@@ -238,6 +238,15 @@
 	    (face-remap-add-relative 'default '(:family "MesloLGS NF"
 						:height 120))))
 
+;; yasnippet
+(use-package yasnippet :ensure t)
+(use-package yasnippet-snippets :ensure t)
+
+;; emmet-mode
+(use-package emmet-mode :ensure t)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+
 ;; Fancy font for orgmode
 (add-hook 'org-mode-hook
 	  (lambda ()
@@ -245,9 +254,6 @@
 	    (face-remap-add-relative 'default '(:family "Quicksand"))))
 
 (add-hook 'prog-mode-hook #'yas-minor-mode)
-(use-package doom-snippets
-  :load-path "~/.emacs.d/doom-snippets"
-  :after yasnippet)
 
 ;; Add yasnippet support for all company backends
 ;; https://github.com/syl20bnr/spacemacs/pull/179
