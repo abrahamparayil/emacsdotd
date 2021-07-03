@@ -149,7 +149,8 @@
 (use-package with-editor)
 
 ;; Company mode
-(use-package company :ensure t)
+(use-package company :ensure t
+  :bind (:map company-active-map ("<tab>" . company-complete-selection)))
 (add-hook 'after-init-hook 'global-company-mode)
 ;; Org Mode code blocks completition
 (use-package company-org-block :ensure t
