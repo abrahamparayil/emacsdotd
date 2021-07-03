@@ -332,5 +332,8 @@ Taken from https://github.com/syl20bnr/spacemacs/pull/179."
   (diminish 'auto-fill-function) (diminish 'ivy-mode)
   (diminish 'yas-minor-mode) (diminish 'column-enforce-mode))
 
+(use-package org-superstar :ensure t)
+(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+
 (provide 'grey-matter)
 ;;; gray-matter.el ends here
